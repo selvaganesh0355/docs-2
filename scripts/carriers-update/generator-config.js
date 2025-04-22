@@ -5526,7 +5526,7 @@ const schemaDocs = require('./schema-docs');
                 return updater.generatePinInfo({
                     style: 'pinFunction',
                     platformNew: 'm-hat-m2',
-                    noPinNumbers: false,
+                    noPinNumbers: true, // num is M.2 pin number, which doesn't make sense
                     sortByNum: true,
                     includeDesc: false,
                     noPWM: true,
@@ -5548,8 +5548,12 @@ const schemaDocs = require('./schema-docs');
                             title: 'Description'
                         },
                         {
-                            key: 'rpi',
-                            title: 'Pi HAT Pin',
+                            key: 'rpiGPIO',
+                            title: 'Pi Pin',
+                        },
+                        {
+                            key: 'rpiFunction',
+                            title: 'Pi Function',
                         }
                     ],
                     functionCols: [],
